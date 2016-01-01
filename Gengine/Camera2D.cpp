@@ -61,7 +61,7 @@ glm::vec2 Camera2D::convertScreenToWorld(glm::vec2 screenCords) {
 // Simple AABB test to see if a box is in the camera view
 bool Camera2D::isBoxInView(const glm::vec2& position, const glm::vec2& dimensions) {
 
-	glm::vec2 scaledScreenDimensions = glm::vec2(_screenWidth, _screenHeight) / (_scale * 2.0f);
+	glm::vec2 scaledScreenDimensions = glm::vec2(_screenWidth, _screenHeight) / _scale;
 
 	// The minimum distance before a collision occurs
 	const float MIN_DISTANCE_X = dimensions.x / 2.0f + scaledScreenDimensions.x / 2.0f;
